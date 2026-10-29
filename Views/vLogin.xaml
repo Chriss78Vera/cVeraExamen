@@ -3,7 +3,7 @@
   <ScrollView>
       <VerticalStackLayout Padding="20" Spacing="10">
     <Image Source="gym_logo.png" HeightRequest="160" Aspect="AspectFit" />
-    <Label Text="LOGIN" HorizontalOptions="Center" />
+    <Label Text="LOGIN" Style="{StaticResource TituloLogin}" />
     <Grid RowSpacing="10" ColumnSpacing="10">
       <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
@@ -14,7 +14,7 @@
           <ColumnDefinition Width="Auto"/>
           <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
-      <Label Text="Usuario" 
+      <Label Text="Usuario" Style="{StaticResource EtiquetaCampo}"
              Grid.Row="0" 
              Grid.Column="0" 
              VerticalOptions="Center"/>
@@ -22,7 +22,7 @@
                Placeholder="Ingrese su usuario" 
                Grid.Row="0" 
                Grid.Column="1"/>
-      <Label Text="Contraseña" 
+      <Label Text="Contraseña" Style="{StaticResource EtiquetaCampo}"
              Grid.Row="1" 
              Grid.Column="0" 
              VerticalOptions="Center"/>
@@ -31,11 +31,11 @@
                IsPassword="True" 
                Grid.Row="1" 
                Grid.Column="1"/>
-      <Button Text="Iniciar sesión" 
+      <Button Text="Iniciar sesión" Style="{StaticResource BotonAccion}"
               Clicked="IniciarSesion_Clicked" 
               Grid.Row="2" 
               Grid.Column="0"/>
-      <Button Text="Acerca de" 
+      <Button Text="Acerca de" Style="{StaticResource BotonAccion}"
               Clicked="AcercaDe_Clicked" 
               Grid.Row="2" 
               Grid.Column="1"/>

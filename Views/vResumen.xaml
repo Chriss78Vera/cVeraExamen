@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="cVeraExamen.Views.vResumen" Title="Resumen">
   <ScrollView><VerticalStackLayout Padding="20" Spacing="10">
-    <Label x:Name="UsuarioConectadoLabel"/>
-            <Label Text="RESUMEN" HorizontalOptions="Center"/>
+    <Label x:Name="UsuarioConectadoLabel" Style="{StaticResource UsuarioConectado}"/>
+            <Label Text="RESUMEN" Style="{StaticResource TituloVista}"/>
             <Grid RowSpacing="8" ColumnSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -21,7 +21,7 @@
                 </Grid.ColumnDefinitions>
       <Label Text="Nombre"
              Grid.Row="0"/>
-                <Label x:Name="NombreLabel"
+                <Label x:Name="NombreLabel" Style="{StaticResource ValorResumen}"
                        Grid.Row="0"
                        Grid.Column="1"/>
       <Label Text="Apellido"
@@ -61,14 +61,14 @@
                        Grid.Column="1"/>
       <Label Text="Pago total"
              Grid.Row="8"/>
-                <Label x:Name="PagoTotalLabel"
+                <Label x:Name="PagoTotalLabel" Style="{StaticResource ValorResumen}"
                        Grid.Row="8"
                        Grid.Column="1"/>
     </Grid>
-    <Button Text="Exportar datos a TXT" Clicked="ExportarDatos_Clicked"/>
-      <Button Text="Nuevo registro" 
+    <Button Text="Exportar datos a TXT" Style="{StaticResource BotonAccion}" Clicked="ExportarDatos_Clicked"/>
+      <Button Text="Nuevo registro" Style="{StaticResource BotonAccion}"
               Clicked="NuevoRegistro_Clicked"/>
-      <Button Text="Cerrar sesión" 
+      <Button Text="Cerrar sesión" Style="{StaticResource BotonAccion}"
               Clicked="CerrarSesion_Clicked"/>
   </VerticalStackLayout>
   </ScrollView>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="cVeraExamen.Views.vRegistro" Title="Registro">
   <ScrollView><VerticalStackLayout Padding="20" Spacing="10">
-    <Label x:Name="UsuarioConectadoLabel"/>
-      <Label Text="REGISTRO" HorizontalOptions="Center"/>
+    <Label x:Name="UsuarioConectadoLabel" Style="{StaticResource UsuarioConectado}"/>
+      <Label Text="REGISTRO" Style="{StaticResource TituloRegistro}"/>
     
     <Grid RowSpacing="10" ColumnSpacing="10">
         <Grid.RowDefinitions>
@@ -14,9 +14,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-      <Label Text="Nombre" Grid.Row="0" Grid.Column="0"/>
-        <Label Text="Apellido" Grid.Row="0" Grid.Column="1"/>
-        <Label Text="Edad" Grid.Row="0" Grid.Column="2"/>
+      <Label Text="Nombre" Style="{StaticResource EtiquetaCampo}" Grid.Row="0" Grid.Column="0"/>
+        <Label Text="Apellido" Style="{StaticResource EtiquetaCampo}" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="Edad" Style="{StaticResource EtiquetaCampo}" Grid.Row="0" Grid.Column="2"/>
       <Entry x:Name="NombreEntry"
              Placeholder="Ingrese nombre" 
              Grid.Row="1" Grid.Column="0"/>
@@ -74,7 +74,7 @@
           Keyboard="Numeric"
           Grid.Row="3"
           Grid.Column="1"/>
-      <Button Text="Calcular pago mensual"
+      <Button Text="Calcular pago mensual" Style="{StaticResource BotonAccion}"
               Clicked="CalcularPagoMensual_Clicked"
               Grid.Row="4"
               Grid.Column="0"/>
@@ -84,7 +84,7 @@
              Grid.Row="4"
              Grid.Column="1"/>
     </Grid>
-    <Button 
+    <Button Style="{StaticResource BotonAccion}"
         Text="Ver resumen"
         Clicked="VerResumen_Clicked"/>
   </VerticalStackLayout>

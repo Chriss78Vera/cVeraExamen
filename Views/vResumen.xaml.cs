@@ -33,9 +33,17 @@ public partial class vResumen : ContentPage
 
     private async void NuevoRegistro_Clicked(object? sender, EventArgs e)
     {
-        // Se limpia la pila hasta Login y se crea un formulario sin datos anteriores.
-        await Navigation.PopToRootAsync();
-        await Navigation.PushAsync(new vRegistro(_usuarioConectado));
+        // Se reemplaza el Registro anterior sin cerrar la sesión del usuario.
+        // Pila antes: Login -> Registro anterior -> Resumen.
+        Page? registroAnterior = Navigation.NavigationStack
+            .LastOrDefault(pagina => pagina is vRegistro);
+
+        if (registroAnterior is not null)
+            Navigation.RemovePage(registroAnterior);
+
+        // Se inserta el formulario limpio antes de esta vista y se cierra el resumen.
+        Navigation.InsertPageBefore(new vRegistro(_usuarioConectado), this);
+        await Navigation.PopAsync();
     }
 
     private async void CerrarSesion_Clicked(object? sender, EventArgs e) => await Navigation.PopToRootAsync();
