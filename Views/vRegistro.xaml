@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="cVeraExamen.Views.vRegistro" Title="Registro">
+  <ScrollView><VerticalStackLayout Padding="20" Spacing="10">
+    <Label x:Name="UsuarioConectadoLabel"/>
+      <Label Text="REGISTRO" HorizontalOptions="Center"/>
+    
+    <Grid RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+      <Label Text="Nombre" Grid.Row="0" Grid.Column="0"/>
+        <Label Text="Apellido" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="Edad" Grid.Row="0" Grid.Column="2"/>
+      <Entry x:Name="NombreEntry"
+             Placeholder="Ingrese nombre" 
+             Grid.Row="1" Grid.Column="0"/>
+        <Entry x:Name="ApellidoEntry"
+               Placeholder="Ingrese apellido"
+               Grid.Row="1" Grid.Column="1"/>
+        <Entry x:Name="EdadEntry" 
+               Placeholder="Mayor o igual a 16" 
+               Keyboard="Numeric" 
+               Grid.Row="1" 
+               Grid.Column="2"/>
+    </Grid>
+    <!-- Datos de la membresía: cinco filas y dos columnas. -->
+    <Grid RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+      <Label Text="Fecha de inicio" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+      <DatePicker x:Name="FechaInicioPicker" Grid.Row="0" Grid.Column="1"/>
+      <Label Text="Plan" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+      <Picker x:Name="PlanPicker" Title="Seleccione un plan" Grid.Row="1" Grid.Column="1">
+        <Picker.Items>
+          <x:String>Musculación</x:String>
+          <x:String>Cardio</x:String>
+          <x:String>Crossfit</x:String>
+          <x:String>Full</x:String>
+        </Picker.Items>
+      </Picker>
+      <Label Text="Casillero"
+             Grid.Row="2"
+             Grid.Column="0"
+             VerticalOptions="Center"/>
+      <Switch x:Name="CasilleroSwitch"
+              Toggled="DatosDePago_Cambiaron"
+              Grid.Row="2"
+              Grid.Column="1"
+              HorizontalOptions="Start"/>
+      <Label 
+          Text="Monto inicial"
+          Grid.Row="3"
+          Grid.Column="0"
+          VerticalOptions="Center"/>
+      <Entry 
+          x:Name="MontoInicialEntry"
+          TextChanged="DatosDePago_Cambiaron"
+          Placeholder="Entre 120 y 600"
+          Keyboard="Numeric"
+          Grid.Row="3"
+          Grid.Column="1"/>
+      <Button Text="Calcular pago mensual"
+              Clicked="CalcularPagoMensual_Clicked"
+              Grid.Row="4"
+              Grid.Column="0"/>
+      <Entry x:Name="PagoMensualEntry"
+             IsReadOnly="True"
+             Placeholder="Campo calculado"
+             Grid.Row="4"
+             Grid.Column="1"/>
+    </Grid>
+    <Button 
+        Text="Ver resumen"
+        Clicked="VerResumen_Clicked"/>
+  </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

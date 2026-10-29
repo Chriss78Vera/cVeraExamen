@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="cVeraExamen.Views.vLogin" Title="Login">
+  <ScrollView>
+      <VerticalStackLayout Padding="20" Spacing="10">
+    <Image Source="gym_logo.png" HeightRequest="160" Aspect="AspectFit" />
+    <Label Text="LOGIN" HorizontalOptions="Center" />
+    <Grid RowSpacing="10" ColumnSpacing="10">
+      <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Usuario" 
+             Grid.Row="0" 
+             Grid.Column="0" 
+             VerticalOptions="Center"/>
+        <Entry x:Name="UsuarioEntry" 
+               Placeholder="Ingrese su usuario" 
+               Grid.Row="0" 
+               Grid.Column="1"/>
+      <Label Text="Contraseña" 
+             Grid.Row="1" 
+             Grid.Column="0" 
+             VerticalOptions="Center"/>
+        <Entry x:Name="ContrasenaEntry" 
+               Placeholder="Ingrese su contraseña" 
+               IsPassword="True" 
+               Grid.Row="1" 
+               Grid.Column="1"/>
+      <Button Text="Iniciar sesión" 
+              Clicked="IniciarSesion_Clicked" 
+              Grid.Row="2" 
+              Grid.Column="0"/>
+      <Button Text="Acerca de" 
+              Clicked="AcercaDe_Clicked" 
+              Grid.Row="2" 
+              Grid.Column="1"/>
+    </Grid>
+  </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
